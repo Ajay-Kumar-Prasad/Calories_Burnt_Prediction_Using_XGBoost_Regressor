@@ -13,7 +13,7 @@ st.title("Calories Burnt Prediction App")
 st.markdown("Predict calories burnt based on your physical activity and body metrics using a trained XGBoost model.")
 
 # User inputs
-gender = st.selectbox("Gender", ["Male", "Female"])
+gender = st.selectbox("Gender", ["male", "female"])
 age = st.number_input("Age (years)", min_value=1, max_value=100, value=25)
 height = st.number_input("Height (cm)", min_value=50, max_value=250, value=170)
 weight = st.number_input("Weight (kg)", min_value=20, max_value=200, value=70)
