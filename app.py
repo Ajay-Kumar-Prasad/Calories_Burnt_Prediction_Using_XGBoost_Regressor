@@ -5,6 +5,8 @@ import numpy as np
 #Load model
 with open("xgbregressor.pkl", "rb") as file:
     model = pickle.load(file)
+encoder = pickle.load(open('labelencoder.pkl', 'rb'))
+
 
 
 st.title("Calories Burnt Prediction App")
@@ -21,7 +23,7 @@ body_temp = st.number_input("Body Temperature (°C)", min_value=30.0, max_value=
 
 
 # Encode gender
-gender_encoded = 1 if gender == "Male" else 0
+gender_encoded = encoder.transform([gender])[0]
 
 # Predict button
 if st.button("Predict"):
